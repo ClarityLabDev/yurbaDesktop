@@ -1,0 +1,136 @@
+<!-- titlebar.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter";
+        }
+
+        .titlebar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff00;
+            backdrop-filter: blur(100px);
+            height: 30px;
+            -webkit-user-select: none;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-right: 15px;
+        }
+
+        .titlebar-button {
+            cursor: pointer;
+            transition: .4s;
+        }
+        .titlebar-button.default:hover {
+            opacity: .5;
+        }
+        .titlebar-button.danger:hover {
+            color: rgb(255, 89, 89);
+        }
+
+        .titlebar-button img {
+            width: 10px;
+            height: 10px;
+            opacity: .5;
+            transition: .4s;
+        }
+        .titlebar-button img:hover {
+            opacity: 1;
+        }
+
+        .titlebar-button.secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5px;
+            height: 5px;
+            padding: 5px;
+            border-radius: 100%;
+            border: 1px solid rgb(197, 197, 197);
+            opacity: .5;
+            transition: .4s;
+        }
+        .titlebar-button.secondary:hover {
+            opacity: 1;
+            border: 1px solid none;
+            background: rgb(197, 197, 197);
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        .title .icon {
+            width: 20px;
+            height: 20px;
+            margin: 0px;
+        }
+        .title p {
+            margin: 0;
+        }
+        .title .title {
+            font-weight: 700;
+        }
+        .title .secondary {
+            opacity: .5;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titlebar">
+        <div class="title">
+            <img class="icon" src="media/yurba.png">
+            <p class="title">Yurba</p>
+            <p class="secondary">Login</p>
+        </div>
+        <div class="buttons">
+            <div class="titlebar-button secondary" id="minimize">
+                <img src="media/help.svg">
+            </div>
+            <div class="titlebar-button defalt" id="maximize">
+                <img src="media/minimize.svg">
+            </div>
+            <div class="titlebar-button defalt" id="maximize">
+                <img src="media/maximize.svg">
+            </div>
+            <div class="titlebar-button danger" id="close">
+                <img src="media/close.svg">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('minimize').addEventListener('click', () => {
+            window.api.minimize();
+        });
+
+        document.getElementById('maximize').addEventListener('click', () => {
+            window.api.toggleMaximize();
+        });
+
+        document.getElementById('close').addEventListener('click', () => {
+            window.api.close();
+        });
+    </script>
+</body>
+
+</html>

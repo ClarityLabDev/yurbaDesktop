@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.visually-hidden {
+    display: none!important;
+}
+
+.unactive {
+    opacity: .5!important;
+    pointer-events: none;
+}
+.unactive:hover {
+    opacity: 0.5!important;
+}
+
+.titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--yurba-main-color);
+    color: var(--yurba-text-color) !important;
+    height: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.indicator {
+    width: -webkit-fill-available;
+    height: 2px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--yurba-main-color);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+.indicator:before {
+    content: "";
+    position: absolute;
+    left: -50%;
+    height: 3px;
+    width: 40%;
+    background-color: var(--yurba-text-color);
+    -webkit-animation: lineAnim 1s linear infinite;
+    -moz-animation: lineAnim 1s linear infinite;
+    animation: lineAnim 1s linear infinite;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+@keyframes lineAnim {
+    0% {
+        left: -40%;
+    }
+
+    50% {
+        left: 20%;
+        width: 80%;
+    }
+
+    100% {
+        left: 100%;
+        width: 100%;
+    }
+}
+
+.secondary {
+    opacity: .5;
+}
+
+.titlebar .navigator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 9999;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titlebar-button {
+    transition: .4s;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 100px;
+}
+
+.titlebar-button:hover {
+    cursor: pointer;
+}
+
+.titlebar-button.default:hover {
+    opacity: .5;
+}
+
+.titlebar-button img {
+    width: 10px;
+    height: 10px;
+    opacity: .5;
+    transition: .4s;
+}
+
+.titlebar-button img:hover {
+    opacity: 1;
+}
+
+.titlebar-button.secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5px;
+    height: 5px;
+    padding: 10px;
+    border-radius: 100%;
+    opacity: .5;
+    transition: .4s;
+}
+
+.titlebar-button.secondary:hover {
+    opacity: 1;
+    background: rgb(197, 197, 197);
+}
+
+.title {
+    display: flex;
+    font-size: 14px;
+    position: absolute;
+    width: -webkit-fill-available;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+}
+
+.title p {
+    margin: 0;
+}
+
+.title .name {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.title .secondary {
+    opacity: .5;
+    font-size: 10px;
+    margin-top: -1px;
+}

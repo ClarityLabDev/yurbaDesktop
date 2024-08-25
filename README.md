@@ -1,6 +1,6 @@
 # Yurba Desktop App
 
-Desktop application for the Ukrainian social network <a href="https://yurba.one/">Yurba</a>. Created to improve user experience on PC for Yurba users. 
+Desktop application on <a href="https://www.electronjs.org/">Electron</a> for the Ukrainian social network <a href="https://yurba.one/">Yurba</a>. Created to improve user experience on PC for Yurba users. 
 Telegram: <a href="https://t.me">@yurba_ua</a>
 
 ![yurbaAppDark](https://github.com/user-attachments/assets/7a23ba00-aef5-4f38-8d4f-45c26e4d1960)
